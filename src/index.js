@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App, { Footer } from './App';
+import { Main } from './App';
 import reportWebVitals from './reportWebVitals';
+
+
+const menu = [
+  "Borritos",
+  "Tacos",
+  "Quesadilla",
+  "Empanadas"
+];
+
+const dishes = menu.map(
+  (dish, i) => ({
+  id: i,
+  title: dish
+})
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App name = "Suraj"/>
+    <Main food = "Food" menu = {dishes}/>
+    <Footer year = {new Date().getFullYear()}/>
   </React.StrictMode>
 );
 
